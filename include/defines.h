@@ -10,6 +10,8 @@ using namespace std;
 static string IMG_FOLDER = "img\\";
 static string CONFIG_FOLDER = "config\\";
 static string SOUND_FOLDER = "sound\\";
+static string CITIES_FOLDER = "cities\\";
+static string STATIONS_FOLDER = "stations\\";
 
 struct int2
 {

@@ -14,6 +14,7 @@ public:
 	int getElectricity();
 	int getPrice();
 	int getProfit();
+	string getstationType();
 
 	bool m_canBeBought = true;
 
