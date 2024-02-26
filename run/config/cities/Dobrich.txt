@@ -1,0 +1,6 @@
+city_name: Dobrich
+price: 160
+Rect: 440 580 160 80
+Electricity: 0
+Profit: 0
+Pollution: 0
