@@ -1,0 +1,3 @@
+dice_1_rect: 920 260 80 80
+dice_2_rect: 1080 260 80 80
+Roll_button_rect: 680 260 160 80
