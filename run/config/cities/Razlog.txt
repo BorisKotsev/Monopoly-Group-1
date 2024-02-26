@@ -1,0 +1,6 @@
+Name: Razlog
+Price: 100
+City_Rect: 680 900 80 160 
+Electrycity: 0 
+Profit: 0
+Pollution: 0 

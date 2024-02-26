@@ -32,7 +32,7 @@ void Board::init()
 	initDice(diceConfig);
 	m_background = loadTexture(backgorundImg);
 
-	
+	//loadQuestions();
 }
 
 void Board::update()
@@ -95,4 +95,23 @@ void Board::rollDice()
 		
 	}
 	
+}
+
+void Board::loadQuestions()
+{
+	fstream stream;
+	string tmp;
+
+	stream.open(CONFIG_FOLDER + "questions.txt");
+
+	while (!stream.eof())
+	{
+		stream >> tmp;
+
+		Question _question;
+
+		_question.init(tmp);
+
+		m_questions.push_back(_question);
+	}
 }

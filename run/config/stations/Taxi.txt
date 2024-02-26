@@ -1,0 +1,5 @@
+Type: Taxi
+Station_Rect: 1320 500 160 80
+Electrycity: 0 
+Profit: 0
+Pollution: 0 

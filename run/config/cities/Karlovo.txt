@@ -1,0 +1,6 @@
+Name: Karlovo
+Price: 320
+City_Rect: 1320 420 160 80 
+Electrycity: 0 
+Profit: 0
+Pollution: 0 
