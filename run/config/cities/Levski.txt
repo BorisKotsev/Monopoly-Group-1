@@ -1,0 +1,6 @@
+Name: Levski
+Price: 280
+City_Rect: 1240 20 80 160
+Electrycity: 0 
+Profit: 0
+Pollution: 0

@@ -17,16 +17,14 @@ void Station::init(string configFile)
 	stream.open(CONFIG_FOLDER + STATIONS_FOLDER + configFile);
 
 	stream >> tmp >> m_stationType;
-	stream >> tmp >> m_price;
-	stream >> tmp >> m_stationRect.x >> m_stationRect.y;
+	stream >> tmp >> m_stationRect.x >> m_stationRect.y >> m_stationRect.w >> m_stationRect.h;
 	stream >> tmp >> m_electricity;
 	stream >> tmp >> m_profit;
 	stream >> tmp >> m_pollution;
 
 	stream.close();
 
-	m_stationRect.w = 160;
-	m_stationRect.h = 80;
+	m_price = 200;
 
 }
 

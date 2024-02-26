@@ -1,0 +1,6 @@
+Name: Pleven
+Price: 260
+City_Rect: 1160 20 80 160
+Electrycity: 0 
+Profit: 0
+Pollution: 0
