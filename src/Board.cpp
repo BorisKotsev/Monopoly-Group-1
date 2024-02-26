@@ -37,7 +37,7 @@ void Board::init()
 
 void Board::update()
 {
-	
+	rollDice();
 }
 
 void Board::draw()
@@ -51,6 +51,14 @@ void Board::draw()
 void Board::destroy()
 {
 	SDL_DestroyTexture(m_background);
+}
+
+int2 Board::getDices()
+{
+	int2 tmp;
+	tmp.x = m_dice1;
+	tmp.y = m_dice2;
+	return tmp;
 }
 
 void Board::initDice(string Config)
