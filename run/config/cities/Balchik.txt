@@ -1,0 +1,6 @@
+city_name: Balchik
+price: 140
+Rect: 440 820 160 80
+Electricity: 0
+Profit: 0
+Pollution: 0

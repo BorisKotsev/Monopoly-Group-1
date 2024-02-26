@@ -1,0 +1,6 @@
+Name: Stara_Zagora
+Price: 320
+City_Rect: 1320 340 160 80
+Electrycity: 0 
+Profit: 0
+Pollution: 0 

@@ -1,0 +1,6 @@
+Name: Kazanluk
+Price: 340
+City_Rect: 1320 740 160 80 
+Electrycity: 0 
+Profit: 0
+Pollution: 0 

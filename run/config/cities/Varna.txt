@@ -1,0 +1,6 @@
+city_name: Varna
+price: 200
+Rect: 440 180 160 80
+Electricity: 0
+Profit: 0
+Pollution: 0
