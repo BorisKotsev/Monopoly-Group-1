@@ -1,0 +1,6 @@
+Name: Vraca
+Price: 220
+City_Rect: 760 20 80 160
+Electrycity: 0 
+Profit: 0
+Pollution: 0
