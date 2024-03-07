@@ -22,10 +22,15 @@ private:
 	SDL_Texture* m_diceFaces[7];
 	SDL_Rect m_rollButton;
 	Drawable m_dice1Drawable, m_dice2Drawable;
+	Drawable m_playerOnTurnDrawable;
+	SDL_Texture* m_numbers[5];
 	
 	int m_dice1, m_dice2;
 	void initDice(string Config);
 	void loadQuestions();
 	void rollDice();
+	int numberOfPlayers;
+	int playerOnTurn = 1;
+	int doubleAmount = 0;
 	
 };
