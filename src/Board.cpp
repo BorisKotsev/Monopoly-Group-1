@@ -45,6 +45,7 @@ void Board::draw()
 	drawObject(m_background);
 	drawObject(m_dice1Drawable);
 	drawObject(m_dice2Drawable);
+	drawObject(m_playerOnTurnDrawable);
 	
 	m_questions[0].run();
 
