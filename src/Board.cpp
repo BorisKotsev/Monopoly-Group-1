@@ -61,7 +61,7 @@ void Board::draw()
 }
 
 	
-}
+
 
 void Board::destroy()
 {
@@ -100,8 +100,7 @@ void Board::initDice(string Config)
 	m_playerOnTurnDrawable.texture = m_numbers[1];
 	m_dice1Drawable.texture = m_diceFaces[1];
 	m_dice2Drawable.texture = m_diceFaces[1];
-	//m_dice1Drawable.rect = { 100,100,100,100 };
-	//tmpd.rect=
+
 }
 
 void Board::rollDice()
