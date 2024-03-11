@@ -1,0 +1,4 @@
+img Menu.bmp
+2pbuttonRect 439 579 240 100
+3pbuttonRect 811 579 240 100
+4pbuttonRect 1183 579 240 100

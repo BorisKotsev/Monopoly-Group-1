@@ -25,6 +25,7 @@
     <ClInclude Include="..\include\Engine.h" />
     <ClInclude Include="..\include\Game.h" />
     <ClInclude Include="..\include\InputManager.h" />
+    <ClInclude Include="..\include\Menu.h" />
     <ClInclude Include="..\include\Player.h" />
     <ClInclude Include="..\include\Presenter.h" />
     <ClInclude Include="..\include\Question.h" />
@@ -42,6 +43,7 @@
     <ClCompile Include="..\src\Game.cpp" />
     <ClCompile Include="..\src\InputManager.cpp" />
     <ClCompile Include="..\src\main.cpp" />
+    <ClCompile Include="..\src\Menu.cpp" />
     <ClCompile Include="..\src\Player.cpp" />
     <ClCompile Include="..\src\Presenter.cpp" />
     <ClCompile Include="..\src\Question.cpp" />

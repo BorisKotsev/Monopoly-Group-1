@@ -3,12 +3,14 @@
 #include "Board.h"
 #include "TitleScreen.h"
 #include "Game.h"
+#include "Menu.h"
 
 enum class GAME_STATE
 {
 	NONE = 0,
 	GAME = 1,
-	TITLE_SCREEN = 2
+	TITLE_SCREEN = 2,
+	MENU = 3
 };
 
 class StateManager
@@ -21,6 +23,7 @@ public:
 
 	Game* m_game;
 	TitleScreen* m_titleScreen;
+	Menu* m_menu;
 
 	State* m_currState;
 
