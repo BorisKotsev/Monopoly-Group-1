@@ -36,6 +36,9 @@ void Board::init()
 	m_background = loadTexture(backgorundImg);
 	numberOfPlayers = world.m_stateManager.m_menu->m_nump;
 	loadQuestions();
+
+
+	questionIndexTEST = rand() % 12 + 1;
 }
 
 void Board::update()
@@ -50,22 +53,19 @@ void Board::draw()
 	drawObject(m_dice2Drawable);
 	drawObject(m_playerOnTurnDrawable);
 	
-	m_questions[0].run();
+	m_questions[questionIndexTEST].run();
 
-	if (m_questions[0].m_answer == 1)
+	if (m_questions[questionIndexTEST].m_answer == 1)
 	{
-		cout << m_questions[0].getMoney() << endl;
-		m_questions[0].m_answer = -1;
+		cout << m_questions[questionIndexTEST].getMoney() << endl;
+		m_questions[questionIndexTEST].m_answer = -1;
 	}
-	else if (m_questions[0].m_answer == 0)
+	else if (m_questions[questionIndexTEST].m_answer == 0)
 	{
-		cout << m_questions[0].getMoney() * m_questions[0].getPercent() / 100 << endl;
-		m_questions[0].m_answer = -1;
+		cout << m_questions[questionIndexTEST].loseMoney() << endl;
+		m_questions[questionIndexTEST].m_answer = -1;
 	}
 }
-
-	
-
 
 void Board::destroy()
 {
@@ -82,10 +82,9 @@ int2 Board::getDices()
 
 void Board::initDice(string Config)
 {
-	
-	
 	string tmp;
 	fstream stream;
+
 	stream.open(CONFIG_FOLDER + Config);
 	stream >> tmp >> m_dice1Drawable.rect.x >> m_dice1Drawable.rect.y >> m_dice1Drawable.rect.w >> m_dice1Drawable.rect.h;
 	stream >> tmp >> m_dice2Drawable.rect.x >> m_dice2Drawable.rect.y >> m_dice2Drawable.rect.w >> m_dice2Drawable.rect.h;
@@ -139,7 +138,7 @@ void Board::rollDice()
 
 void Board::loadQuestions()
 {
-	int numQuestions = 1;
+	int numQuestions = 12;
 
 	for (int i = 1; i <= numQuestions; i++)
 	{
