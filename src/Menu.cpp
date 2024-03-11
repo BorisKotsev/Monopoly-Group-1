@@ -65,6 +65,8 @@ void Menu::run()
 
 	}
 
+	
+
 	if (isMouseInRect(InputManager::m_mouseCoor, m_2pbutton.rect) && InputManager::isMousePressed()) {
 
 		m_nump = 2;
@@ -90,10 +92,9 @@ void Menu::run()
 	}
 	
 	if (isMouseInRect(InputManager::m_mouseCoor, m_play.rect) && InputManager::isMousePressed()) {
-		
+
 		m_drawplay = false;
 		m_drawb = true;
-		
 
 	}
 
