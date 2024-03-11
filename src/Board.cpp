@@ -2,6 +2,9 @@
 #include "Presenter.h"
 #include "InputManager.h"
 #include "SoundManager.h"
+#include "World.h"
+
+extern World world; 
 
 Board::Board()
 {
@@ -31,7 +34,7 @@ void Board::init()
 	stream.close();
 	initDice(diceConfig);
 	m_background = loadTexture(backgorundImg);
-	numberOfPlayers = 4;
+	numberOfPlayers = world.m_stateManager.m_menu->m_nump;
 	loadQuestions();
 }
 
