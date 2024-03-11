@@ -4,7 +4,7 @@
 #include <fstream>
 #include <SDL.h>
 #include <vector>
-#include<string>
+#include <string>
 
 using namespace std;
 
@@ -13,6 +13,7 @@ static string CONFIG_FOLDER = "config\\";
 static string SOUND_FOLDER = "sound\\";
 static string CITIES_FOLDER = "cities\\";
 static string STATIONS_FOLDER = "stations\\";
+static string QUESTION_FOLDER = "questions\\";
 
 struct int2
 {
