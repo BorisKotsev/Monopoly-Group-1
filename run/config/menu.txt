@@ -1,4 +1,5 @@
 img Menu.bmp
-2pbuttonRect 439 579 240 100
-3pbuttonRect 811 579 240 100
-4pbuttonRect 1183 579 240 100
+2pbutton 2players.bmp 439 579 240 100
+3pbutton 3players.bmp 811 579 240 100
+4pbutton 4players.bmp 1183 579 240 100
+play play.bmp 692 527 507 250

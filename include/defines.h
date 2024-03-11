@@ -14,6 +14,7 @@ static string SOUND_FOLDER = "sound\\";
 static string CITIES_FOLDER = "cities\\";
 static string STATIONS_FOLDER = "stations\\";
 static string QUESTION_FOLDER = "questions\\";
+static string MENU_FOLDER = "menu\\";
 
 struct int2
 {

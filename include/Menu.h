@@ -17,7 +17,10 @@ public:
 
 private:
 	 SDL_Texture* m_menu;
-	 SDL_Rect m_2pbutton;
-	 SDL_Rect m_3pbutton;
-	 SDL_Rect m_4pbutton;
+	 Drawable m_2pbutton;
+	 Drawable m_3pbutton;
+	 Drawable m_4pbutton;
+	 Drawable m_play;
+	 bool m_drawb;
+	 bool m_drawplay;
 };
