@@ -36,9 +36,6 @@ void Board::init()
 	m_background = loadTexture(backgorundImg);
 	numberOfPlayers = world.m_stateManager.m_menu->m_nump;
 	loadQuestions();
-
-
-	questionIndexTEST = rand() % 12 + 1;
 }
 
 void Board::update()
@@ -53,17 +50,26 @@ void Board::draw()
 	drawObject(m_dice2Drawable);
 	drawObject(m_playerOnTurnDrawable);
 	
+	if (questionIndexTEST >= m_questions.size())
+	{
+		questionIndexTEST = 0;
+	}
+
 	m_questions[questionIndexTEST].run();
 
 	if (m_questions[questionIndexTEST].m_answer == 1)
 	{
 		cout << m_questions[questionIndexTEST].getMoney() << endl;
 		m_questions[questionIndexTEST].m_answer = -1;
+
+		questionIndexTEST++;
 	}
 	else if (m_questions[questionIndexTEST].m_answer == 0)
 	{
 		cout << m_questions[questionIndexTEST].loseMoney() << endl;
 		m_questions[questionIndexTEST].m_answer = -1;
+
+		questionIndexTEST++;
 	}
 }
 
@@ -138,8 +144,6 @@ void Board::rollDice()
 
 void Board::loadQuestions()
 {
-	int numQuestions = 12;
-
 	for (int i = 1; i <= numQuestions; i++)
 	{
 		string tmp = "Question" + to_string(i) + ".txt";

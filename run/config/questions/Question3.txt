@@ -1,2 +1,2 @@
-Questions_Img: Question3.bmp Answers3.bmp
+Questions_Img: Question3.bmp AnswersB.bmp
 Money: 250

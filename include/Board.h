@@ -33,6 +33,8 @@ private:
 	int playerOnTurn = 1;
 	int doubleAmount = 0;
 	
-	int questionIndexTEST;
+	int numQuestions = 20; //TEST
+
+	int questionIndexTEST = 0;
 
 };
