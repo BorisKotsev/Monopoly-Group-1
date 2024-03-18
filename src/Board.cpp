@@ -121,6 +121,7 @@ void Board::rollDice()
 				playerOnTurn = 1;
 			}
 			m_playerOnTurnDrawable.texture = m_numbers[playerOnTurn];
+
 		}
 		m_dice1 = rand() % 6 + 1;
 		m_dice2 = rand() % 6 + 1;

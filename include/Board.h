@@ -31,6 +31,6 @@ private:
 	void rollDice();
 	int numberOfPlayers;
 	int playerOnTurn = 1;
-	int doubleAmount = 0;
+	int doubleAmount = -1;
 	
 };
