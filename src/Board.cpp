@@ -50,7 +50,7 @@ void Board::draw()
 	drawObject(m_dice2Drawable);
 	drawObject(m_playerOnTurnDrawable);
 	
-	if (questionIndexTEST >= m_questions.size())
+	/*if (questionIndexTEST >= m_questions.size())
 	{
 		questionIndexTEST = 0;
 	}
@@ -70,7 +70,7 @@ void Board::draw()
 		m_questions[questionIndexTEST].m_answer = -1;
 
 		questionIndexTEST++;
-	}
+	}*/
 }
 
 void Board::destroy()
