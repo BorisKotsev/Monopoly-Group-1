@@ -31,7 +31,7 @@ void WinScreen::run()
 	drawObject(m_backround);
 	if (InputManager::isMousePressed()) {
 		if (isMouseInRect(InputManager::m_mouseCoor, m_play_Again)){
-			world.m_stateManager.changeGameState(GAME_STATE::TITLE_SCREEN);
+			world.m_stateManager.changeGameState(GAME_STATE::MENU);
 		}
 		if (isMouseInRect(InputManager::m_mouseCoor, m_quit)) {
 			world.m_stateManager.init(GAME_STATE::NONE);
