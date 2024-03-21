@@ -31,8 +31,10 @@ private:
 	void rollDice();
 	int numberOfPlayers;
 	int playerOnTurn = 1;
-	int doubleAmount = 0;
+	int doubleAmount = -1;
 	
-	int questionIndexTEST;
+	int numQuestions = 20; //TEST
+
+	int questionIndexTEST = 0;
 
 };

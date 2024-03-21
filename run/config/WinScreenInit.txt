@@ -1,0 +1,3 @@
+Backround_image: WinScreen.bmp
+Play_again_rect: 334 754 450 150
+Quit_rect: 1136 754 450 150
