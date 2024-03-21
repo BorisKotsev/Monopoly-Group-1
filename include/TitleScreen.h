@@ -14,5 +14,6 @@ public:
 	void destroy();
 
 private:
-	Drawable m_titleScreenLogo;
+	Drawable m_titlescreen;
+	Drawable m_presskey;
 };
