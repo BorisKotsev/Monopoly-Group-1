@@ -1,0 +1,4 @@
+Texture: PlayAgain.bmp
+Rect: 334 754 450 150
+Max_increase: 30
+Increase_per_frame: 2

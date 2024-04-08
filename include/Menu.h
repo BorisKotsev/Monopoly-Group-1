@@ -2,7 +2,7 @@
 
 #include "defines.h"
 #include "State.h"
-
+#include "Button.h"
 
 class Menu : public State
 {
@@ -17,10 +17,10 @@ public:
 
 private:
 	 SDL_Texture* m_menu;
-	 Drawable m_2pbutton;
-	 Drawable m_3pbutton;
-	 Drawable m_4pbutton;
-	 Drawable m_play;
+	 Button m_2pbutton;
+	 Button m_3pbutton;
+	 Button m_4pbutton;
+	 Button m_play;
 	 bool m_drawb;
 	 bool m_drawplay;
 };

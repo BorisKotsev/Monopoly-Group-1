@@ -18,13 +18,13 @@ Board::~Board()
 
 void Board::init()
 {
-	string configFile = "boardInit.txt";
+	string configFile ="boardInit.txt";
 
 	fstream stream;
 
 	string backgorundImg, tmp, diceConfig;
 
-	stream.open(CONFIG_FOLDER + configFile);
+	stream.open(CONFIG_FOLDER+ GAME_FOLDER + configFile);
 
     stream >> tmp >> backgorundImg;
 
@@ -32,14 +32,16 @@ void Board::init()
 
 
 	stream.close();
+	
 	initDice(diceConfig);
-	m_background = loadTexture(backgorundImg);
+	m_background = loadTexture(GAME_FOLDER + backgorundImg);
 	numberOfPlayers = world.m_stateManager.m_menu->m_nump;
 	loadQuestions();
 }
 
 void Board::update()
 {
+	m_rollButton.update();
 	rollDice();
 }
 
@@ -49,6 +51,7 @@ void Board::draw()
 	drawObject(m_dice1Drawable);
 	drawObject(m_dice2Drawable);
 	drawObject(m_playerOnTurnDrawable);
+	m_rollButton.draw();
 	
 	/*if (questionIndexTEST >= m_questions.size())
 	{
@@ -76,6 +79,7 @@ void Board::draw()
 void Board::destroy()
 {
 	SDL_DestroyTexture(m_background);
+	m_rollButton.destroy();
 }
 
 int2 Board::getDices()
@@ -88,22 +92,23 @@ int2 Board::getDices()
 
 void Board::initDice(string Config)
 {
-	string tmp;
+	string tmp, rollButtonConf;
 	fstream stream;
 
-	stream.open(CONFIG_FOLDER + Config);
+	stream.open(CONFIG_FOLDER + GAME_FOLDER + Config);
 	stream >> tmp >> m_dice1Drawable.rect.x >> m_dice1Drawable.rect.y >> m_dice1Drawable.rect.w >> m_dice1Drawable.rect.h;
 	stream >> tmp >> m_dice2Drawable.rect.x >> m_dice2Drawable.rect.y >> m_dice2Drawable.rect.w >> m_dice2Drawable.rect.h;
-	stream >> tmp >> m_rollButton.x >> m_rollButton.y >> m_rollButton.w >> m_rollButton.h;
+	stream >> tmp >> rollButtonConf;
 	stream >> tmp >> m_playerOnTurnDrawable.rect.x >> m_playerOnTurnDrawable.rect.y >> m_playerOnTurnDrawable.rect.w >> m_playerOnTurnDrawable.rect.h;
 	stream.close();
 
+	m_rollButton.init(rollButtonConf, GAME_FOLDER);
 	for (int i = 1; i <= 6; i++) {
-		tmp = "diceFaces\\DiceFace" + to_string(i) + ".bmp";
+		tmp = GAME_FOLDER + "diceFaces\\DiceFace" + to_string(i) + ".bmp";
 		m_diceFaces[i] = loadTexture(tmp);
 	}
 	for (int i = 1; i <= 4; i++) {
-		tmp = "numbers\\" + to_string(i) + ".bmp";
+		tmp = GAME_FOLDER + "numbers\\" + to_string(i) + ".bmp";
 		m_numbers[i] = loadTexture(tmp);
 	}
 	m_playerOnTurnDrawable.texture = m_numbers[1];
@@ -114,7 +119,7 @@ void Board::initDice(string Config)
 
 void Board::rollDice()
 {
-	if (InputManager::isMousePressed() && isMouseInRect(InputManager::m_mouseCoor, m_rollButton)) {
+	if (m_rollButton.isClicked()) {
 		
 		playerOnTurn++;
 		if (m_dice1 == m_dice2 && doubleAmount < 4) {

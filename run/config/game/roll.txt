@@ -1,0 +1,4 @@
+Texture: roll.bmp
+Rect: 680 260 160 80
+Max_increase: 30
+Increase_per_frame: 2

@@ -55,13 +55,13 @@ void Question::run()
 
 	if (m_mainQuestion.texture == m_postQuestion)
 	{
-		if (isMouseInRect(InputManager::m_mouseCoor, m_yesBtn) && InputManager::isMousePressed())
+		if (isMouseInRect(m_yesBtn) && InputManager::isMousePressed())
 		{
 			m_answer = 1;
 
 			this->destroy();
 		}
-		else if (isMouseInRect(InputManager::m_mouseCoor, m_noBtn) && InputManager::isMousePressed())
+		else if (isMouseInRect(m_noBtn) && InputManager::isMousePressed())
 		{
 			m_answer = 0;
 
@@ -71,7 +71,7 @@ void Question::run()
 
 	if (m_mainQuestion.texture == m_question)
 	{
-		if (isMouseInRect(InputManager::m_mouseCoor, m_readyBtn) && InputManager::isMousePressed())
+		if (isMouseInRect(m_readyBtn) && InputManager::isMousePressed())
 		{
 			m_mainQuestion.texture = m_postQuestion;
 		}

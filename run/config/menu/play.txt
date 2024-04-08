@@ -1,0 +1,4 @@
+Texture: play.bmp
+Rect: 680 701 500 146
+Max_increase: 30
+Increase_per_frame: 2

@@ -20,7 +20,8 @@ void StateManager::changeGameState(GAME_STATE _state)
 	//destroyLastState();
 
 	m_gameState = _state;
-	
+
+
 	initNewState();
 }
 
@@ -33,6 +34,7 @@ void StateManager::initNewState()
 		break;
 	case GAME_STATE::GAME:
 		m_currState = m_game;
+
 		break;
 	case GAME_STATE::TITLE_SCREEN:
 		m_titleScreen = new TitleScreen();

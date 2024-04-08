@@ -1,0 +1,4 @@
+Texture: 4players.bmp
+Rect: 1183 579 240 100
+Max_increase: 30
+Increase_per_frame: 2

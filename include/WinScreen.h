@@ -1,8 +1,8 @@
 #pragma once
 
 #include "State.h"
-#include "Board.h"
-
+//#include "Board.h"
+#include "Button.h"
 class WinScreen : public State
 {
 public:
@@ -16,7 +16,9 @@ public:
 	void destroy();
 	void run();
 private:
-	SDL_Rect m_play_Again;
-	SDL_Rect m_quit;
+
 	SDL_Texture* m_backround;
+	Button m_playAgain;
+	Button m_quit;
+	
 };

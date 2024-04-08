@@ -1,0 +1,3 @@
+Backround_image: WinScreen.bmp
+Play_again_config: PlayAgainButton.txt
+Quit_button_config: QuitButton.txt

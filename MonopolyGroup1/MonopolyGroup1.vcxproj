@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\include\Board.h" />
+    <ClInclude Include="..\include\Button.h" />
     <ClInclude Include="..\include\City.h" />
     <ClInclude Include="..\include\defines.h" />
     <ClInclude Include="..\include\Engine.h" />
@@ -39,6 +40,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\Board.cpp" />
+    <ClCompile Include="..\src\Button.cpp" />
     <ClCompile Include="..\src\City.cpp" />
     <ClCompile Include="..\src\Engine.cpp" />
     <ClCompile Include="..\src\Game.cpp" />

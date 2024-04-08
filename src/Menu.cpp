@@ -16,28 +16,28 @@ Menu::~Menu()
 
 void Menu::init()
 {
-	string tmp, img, b2img, b3img, b4img, playimg;
+	string tmp, img, b2, b3, b4, play;
 
 	fstream stream;
 
-	stream.open(CONFIG_FOLDER + "menu.txt");
+	stream.open(CONFIG_FOLDER + MENU_FOLDER + "menu.txt");
 
 
 	stream >> tmp >> img;
-	stream >> tmp >> b2img >> m_2pbutton.rect.x >> m_2pbutton.rect.y >> m_2pbutton.rect.w >> m_2pbutton.rect.h;
-	stream >> tmp >> b3img >> m_3pbutton.rect.x >> m_3pbutton.rect.y >> m_3pbutton.rect.w >> m_3pbutton.rect.h;
-	stream >> tmp >> b4img >> m_4pbutton.rect.x >> m_4pbutton.rect.y >> m_4pbutton.rect.w >> m_4pbutton.rect.h;
-	stream >> tmp >> playimg >> m_play.rect.x >> m_play.rect.y >> m_play.rect.w >> m_play.rect.h;
+	stream >> tmp >> b2;
+	stream >> tmp >> b3;
+	stream >> tmp >> b4;
+	stream >> tmp >> play;
 
 	stream.close();
 
 	m_drawb = false;
 	m_drawplay = true;
 
-	m_play.texture = loadTexture(MENU_FOLDER + playimg);
-	m_2pbutton.texture = loadTexture(MENU_FOLDER + b2img);
-	m_3pbutton.texture = loadTexture(MENU_FOLDER + b3img);
-	m_4pbutton.texture = loadTexture(MENU_FOLDER + b4img);
+	m_2pbutton.init(b2, MENU_FOLDER);
+	m_3pbutton.init(b3, MENU_FOLDER);
+	m_4pbutton.init(b4, MENU_FOLDER);
+	m_play.init(play, MENU_FOLDER);
 
 	m_menu = loadTexture(MENU_FOLDER + img);
 
@@ -49,25 +49,27 @@ void Menu::run()
 {
 
 	drawObject(m_menu);
-	
+	m_2pbutton.update();
+	m_3pbutton.update();
+	m_4pbutton.update();
+	m_play.update();
 	
 	if (m_drawplay == true) {
 
-	drawObject(m_play);
-
+		m_play.draw();
 	}
 
 	if (m_drawb == true) {
 		
-		drawObject(m_2pbutton);
-		drawObject(m_3pbutton);
-		drawObject(m_4pbutton);
+		m_2pbutton.draw();
+		m_3pbutton.draw();
+		m_4pbutton.draw();
 
 	}
 
 	
 
-	if (isMouseInRect(InputManager::m_mouseCoor, m_2pbutton.rect) && InputManager::isMousePressed()) {
+	if (m_2pbutton.isClicked()) {
 
 		m_nump = 2;
 
@@ -75,7 +77,7 @@ void Menu::run()
 		return;
 	}
 	
-	if (isMouseInRect(InputManager::m_mouseCoor, m_3pbutton.rect) && InputManager::isMousePressed()) {
+	if (m_3pbutton.isClicked()) {
 
 		m_nump = 3;
 
@@ -83,7 +85,7 @@ void Menu::run()
 		return;
 	}
 	
-	if (isMouseInRect(InputManager::m_mouseCoor, m_4pbutton.rect) && InputManager::isMousePressed()) {
+	if (m_4pbutton.isClicked()) {
 
 		m_nump = 4;
 
@@ -91,7 +93,7 @@ void Menu::run()
 		return;
 	}
 	
-	if (isMouseInRect(InputManager::m_mouseCoor, m_play.rect) && InputManager::isMousePressed()) {
+	if (m_play.isClicked()) {
 
 		m_drawplay = false;
 		m_drawb = true;
@@ -104,5 +106,9 @@ void Menu::destroy()
 {
 
 	SDL_DestroyTexture(m_menu);
+	m_2pbutton.destroy();
+	m_3pbutton.destroy();
+	m_4pbutton.destroy();
+	m_play.destroy();
 
 }

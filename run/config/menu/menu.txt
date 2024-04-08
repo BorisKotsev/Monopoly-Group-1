@@ -1,0 +1,5 @@
+img: Menu.bmp
+2pbutton: 2player.txt
+3pbutton: 3player.txt
+4pbutton: 4player.txt
+play: play.txt

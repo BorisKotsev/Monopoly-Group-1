@@ -2,7 +2,7 @@
 
 #include "Engine.h"
 #include "Question.h"
-
+#include "Button.h"
 class Board
 {
 public:
@@ -20,7 +20,7 @@ public:
 private:
 	SDL_Texture* m_background;
 	SDL_Texture* m_diceFaces[7];
-	SDL_Rect m_rollButton;
+	Button m_rollButton;
 	Drawable m_dice1Drawable, m_dice2Drawable;
 	Drawable m_playerOnTurnDrawable;
 	SDL_Texture* m_numbers[5];

@@ -1,0 +1,4 @@
+Texture: 2players.bmp
+Rect: 439 579 240 100
+Max_increase: 30
+Increase_per_frame: 2

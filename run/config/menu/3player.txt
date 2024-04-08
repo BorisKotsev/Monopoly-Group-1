@@ -1,0 +1,4 @@
+Texture: 3players.bmp
+Rect: 811 579 240 100
+Max_increase: 30
+Increase_per_frame: 2

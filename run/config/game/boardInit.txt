@@ -1,0 +1,2 @@
+BackgoundImg: background.bmp
+DiceConfigFile: dice.txt
