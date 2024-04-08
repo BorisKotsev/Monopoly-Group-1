@@ -3,6 +3,8 @@
 #include "Engine.h"
 #include "Question.h"
 #include "Button.h"
+#include "TextField.h"
+
 class Board
 {
 public:
@@ -36,5 +38,7 @@ private:
 	int numQuestions = 20; //TEST
 
 	int questionIndexTEST = 0;
+
+	TextField m_testField;
 
 };

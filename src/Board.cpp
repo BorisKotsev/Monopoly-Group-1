@@ -37,12 +37,15 @@ void Board::init()
 	m_background = loadTexture(GAME_FOLDER + backgorundImg);
 	numberOfPlayers = world.m_stateManager.m_menu->m_nump;
 	loadQuestions();
+
+	m_testField.init("enterProduct.txt");
 }
 
 void Board::update()
 {
 	m_rollButton.update();
 	rollDice();
+	m_testField.update();
 }
 
 void Board::draw()
@@ -52,6 +55,7 @@ void Board::draw()
 	drawObject(m_dice2Drawable);
 	drawObject(m_playerOnTurnDrawable);
 	m_rollButton.draw();
+	m_testField.draw();
 	
 	/*if (questionIndexTEST >= m_questions.size())
 	{
@@ -87,6 +91,8 @@ int2 Board::getDices()
 	int2 tmp;
 	tmp.x = m_dice1;
 	tmp.y = m_dice2;
+	
+
 	return tmp;
 }
 
@@ -144,6 +150,7 @@ void Board::rollDice()
 
 		//cout << playerOnTurn << ' ';
 		
+		m_testField.setText(to_string(m_dice1 + m_dice2));
 	}
 	
 }
