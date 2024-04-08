@@ -15,13 +15,24 @@ TitleScreen::~TitleScreen()
 
 void TitleScreen::init()
 {
-	m_titleScreenLogo.rect = { 0, 0, 1920, 1080 };
-	m_titleScreenLogo.texture = loadTexture("TitleScreen.bmp");
+	string tmp, img, presskey;
+
+	fstream stream;
+
+	stream.open(CONFIG_FOLDER + "TitleScreen.txt");
+
+	stream >> tmp >> img;
+	stream >> tmp >> presskey >> m_presskey.rect.x >> m_presskey.rect.y >> m_presskey.rect.w >> m_presskey.rect.h;
+
+	stream.close();
+
+	m_presskey.texture = loadTexture(MENU_FOLDER + presskey);
+
 }
 
 void TitleScreen::run()
 {
-	drawObject(m_titleScreenLogo);
+	drawObject(m_titlescreen);
 
 	if (isAnyKeyPressed())
 	{
@@ -32,5 +43,5 @@ void TitleScreen::run()
 
 void TitleScreen::destroy()
 {
-	SDL_DestroyTexture(m_titleScreenLogo.texture);
+	SDL_DestroyTexture(m_titlescreen.texture);
 }

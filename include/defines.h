@@ -15,6 +15,7 @@ static string CITIES_FOLDER = "cities\\";
 static string STATIONS_FOLDER = "stations\\";
 static string QUESTION_FOLDER = "questions\\";
 static string MENU_FOLDER = "menu\\";
+static string TITLESCREEN_FOLDER = "titlescreen\\";
 static string WIN_SCREEN_FOLDER = "WinScreen\\";
 static string GAME_FOLDER = "game\\";
 
