@@ -14,6 +14,6 @@ public:
 	void destroy();
 
 private:
-	Drawable m_titlescreen;
-	Drawable m_presskey;
+	SDL_Texture* m_titlescreen;
+	DrawableWithOpp m_presskey;
 };

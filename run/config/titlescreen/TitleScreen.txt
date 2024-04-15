@@ -1,0 +1,4 @@
+img TitleScreen.bmp
+img presskey.bmp 
+rect 554 933 800 100
+opacity 30 3

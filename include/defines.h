@@ -175,6 +175,12 @@ struct DrawableSrcRect : Drawable
 	SDL_Rect srcRect;
 };
 
+struct DrawableWithOpp : Drawable
+{
+	int opacity = 0;
+	int cpf = 0;
+};
+
 enum SOUND 
 {
 	BACKGORUND_MUSIC
