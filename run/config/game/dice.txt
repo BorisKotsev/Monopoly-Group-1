@@ -1,4 +1,4 @@
-dice_1_rect: 920 260 80 80
-dice_2_rect: 1080 260 80 80
+dice_1_rect: 930 270 60 60
+dice_2_rect: 1090 270 60 60
 Roll_button_config: roll.txt
 Player_on_turn_rect: 1180 720 60 90

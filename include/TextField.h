@@ -18,11 +18,11 @@ public:
 	bool m_needToDrawBackground;
 
 private:
-	string m_value;
-
 	Drawable m_text;
-	Drawable m_background;
-
 	int m_fontSize;
 	int m_color;
+	string m_value;
+
+	Drawable m_background;
+
 };

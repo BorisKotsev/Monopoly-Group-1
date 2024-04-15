@@ -25,7 +25,7 @@ private:
 	Button m_rollButton;
 	Drawable m_dice1Drawable, m_dice2Drawable;
 	Drawable m_playerOnTurnDrawable;
-	SDL_Texture* m_numbers[5];
+	
 	
 	int m_dice1, m_dice2;
 	void initDice(string Config);
@@ -40,5 +40,6 @@ private:
 	int questionIndexTEST = 0;
 
 	TextField m_testField;
+	TextField m_playerOnTurnField;
 
 };

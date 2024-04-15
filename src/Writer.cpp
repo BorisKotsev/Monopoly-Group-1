@@ -15,7 +15,7 @@ void Writer::init()
 
 	TTF_Font* font;
 
-	for (int i = 10; i < 70; i++) //Font size from 10 to 69
+	for (int i = 10; i < 300; i++) //Font size from 10 to 299
 	{
 		font = TTF_OpenFont(m_fontLocation.c_str(), i);
 		m_font.insert(pair<int, TTF_Font*>(i, font));
