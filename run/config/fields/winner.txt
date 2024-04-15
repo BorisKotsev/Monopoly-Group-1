@@ -1,0 +1,5 @@
+rect: 335 380 316
+fontSize: 200
+rect: 335 380 1251 316
+color: 2
+backImage: winner.bmp

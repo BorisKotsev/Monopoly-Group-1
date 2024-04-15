@@ -1,0 +1,5 @@
+rect: 0 0 0
+fontSize: 50
+rect: 680 720 560 90
+color: 1
+backImage: Player-on-turn.bmp

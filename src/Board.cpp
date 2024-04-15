@@ -39,6 +39,7 @@ void Board::init()
 	loadQuestions();
 
 	m_testField.init("enterProduct.txt");
+	m_playerOnTurnField.init("PlayerOnTurn.txt");
 }
 
 void Board::update()
@@ -46,6 +47,7 @@ void Board::update()
 	m_rollButton.update();
 	rollDice();
 	m_testField.update();
+	m_playerOnTurnField.update();
 }
 
 void Board::draw()
@@ -53,9 +55,10 @@ void Board::draw()
 	drawObject(m_background);
 	drawObject(m_dice1Drawable);
 	drawObject(m_dice2Drawable);
-	drawObject(m_playerOnTurnDrawable);
+	
 	m_rollButton.draw();
-	m_testField.draw();
+	//m_testField.draw();
+	m_playerOnTurnField.draw();
 	
 	/*if (questionIndexTEST >= m_questions.size())
 	{
@@ -113,11 +116,7 @@ void Board::initDice(string Config)
 		tmp = GAME_FOLDER + "diceFaces\\DiceFace" + to_string(i) + ".bmp";
 		m_diceFaces[i] = loadTexture(tmp);
 	}
-	for (int i = 1; i <= 4; i++) {
-		tmp = GAME_FOLDER + "numbers\\" + to_string(i) + ".bmp";
-		m_numbers[i] = loadTexture(tmp);
-	}
-	m_playerOnTurnDrawable.texture = m_numbers[1];
+	
 	m_dice1Drawable.texture = m_diceFaces[1];
 	m_dice2Drawable.texture = m_diceFaces[1];
 
@@ -139,7 +138,7 @@ void Board::rollDice()
 			if (playerOnTurn > numberOfPlayers) {
 				playerOnTurn = 1;
 			}
-			m_playerOnTurnDrawable.texture = m_numbers[playerOnTurn];
+			
 
 		}
 		m_dice1 = rand() % 6 + 1;
@@ -151,6 +150,7 @@ void Board::rollDice()
 		//cout << playerOnTurn << ' ';
 		
 		m_testField.setText(to_string(m_dice1 + m_dice2));
+		m_playerOnTurnField.setText("Player on turn:" + to_string(playerOnTurn));
 	}
 	
 }
