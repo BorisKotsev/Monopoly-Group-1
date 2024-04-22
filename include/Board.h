@@ -4,7 +4,7 @@
 #include "Question.h"
 #include "Button.h"
 #include "TextField.h"
-
+#include "Popup.h"
 class Board
 {
 public:
@@ -41,5 +41,7 @@ private:
 
 	TextField m_testField;
 	TextField m_playerOnTurnField;
+	Popup m_popup;
+	
 
 };

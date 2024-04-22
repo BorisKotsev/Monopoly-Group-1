@@ -22,7 +22,7 @@ void Board::init()
 
 	fstream stream;
 
-	string backgorundImg, tmp, diceConfig;
+	string backgorundImg, tmp, diceConfig, popupConf="Popup.txt";
 
 	stream.open(CONFIG_FOLDER+ GAME_FOLDER + configFile);
 
@@ -34,12 +34,15 @@ void Board::init()
 	stream.close();
 	
 	initDice(diceConfig);
+	m_popup.init(popupConf);
 	m_background = loadTexture(GAME_FOLDER + backgorundImg);
 	numberOfPlayers = world.m_stateManager.m_menu->m_nump;
 	loadQuestions();
 
 	m_testField.init("enterProduct.txt");
 	m_playerOnTurnField.init("PlayerOnTurn.txt");
+	//m_popup.show("test", 200);
+	m_playerOnTurnField.setText("Player on turn: " + to_string(playerOnTurn));
 }
 
 void Board::update()
@@ -48,6 +51,7 @@ void Board::update()
 	rollDice();
 	m_testField.update();
 	m_playerOnTurnField.update();
+	m_popup.update();
 }
 
 void Board::draw()
@@ -55,7 +59,7 @@ void Board::draw()
 	drawObject(m_background);
 	drawObject(m_dice1Drawable);
 	drawObject(m_dice2Drawable);
-	
+	m_popup.draw();
 	m_rollButton.draw();
 	//m_testField.draw();
 	m_playerOnTurnField.draw();
@@ -118,8 +122,9 @@ void Board::initDice(string Config)
 	}
 	
 	m_dice1Drawable.texture = m_diceFaces[1];
-	m_dice2Drawable.texture = m_diceFaces[1];
-
+	m_dice2Drawable.texture = m_diceFaces[6];
+	m_dice1 = 1;
+	m_dice2 = 6;
 }
 
 void Board::rollDice()
@@ -150,7 +155,8 @@ void Board::rollDice()
 		//cout << playerOnTurn << ' ';
 		
 		m_testField.setText(to_string(m_dice1 + m_dice2));
-		m_playerOnTurnField.setText("Player on turn:" + to_string(playerOnTurn));
+
+		m_playerOnTurnField.setText("Player on turn: " + to_string(playerOnTurn));
 	}
 	
 }
