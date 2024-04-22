@@ -41,7 +41,7 @@ void Board::init()
 
 	m_testField.init("enterProduct.txt");
 	m_playerOnTurnField.init("PlayerOnTurn.txt");
-	//m_popup.show("test", 200);
+	m_popup.show("test", 200, 1);
 	m_playerOnTurnField.setText("Player on turn: " + to_string(playerOnTurn));
 }
 

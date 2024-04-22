@@ -10,13 +10,13 @@ public:
 	void draw();
 	void update();
 	void destroy();
-	void show(string name, int price);
+	void show(string name, int price, int type);
 	void hide();
 private:
 	TextField m_text;
 	TextField m_topText;
 	bool m_showing;
-
+	
 	Button m_yes;
 	Button m_no;
 	Drawable m_backround;

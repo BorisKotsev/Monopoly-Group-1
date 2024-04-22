@@ -30,7 +30,7 @@ void Popup::init(string config)
 	m_yes.init(yesConf, GAME_FOLDER);
 	m_no.init(noConf, GAME_FOLDER);
 	m_showing = false;
-	m_topText.setText("Would you like to buy");
+	
 
 }
 
@@ -63,9 +63,16 @@ void Popup::destroy()
 	m_no.destroy();
 }
 
-void Popup::show(string name, int price)
+void Popup::show(string name, int price, int type)
 {
-	m_text.setText(name+" for "+to_string(price));
+	if (type == 1) {
+		m_topText.setText("Would you like to buy");
+		m_text.setText(name + " for " + to_string(price));
+	}
+	else {
+		m_topText.setText("You were taxed");
+		m_text.setText("for " + to_string(price) + " by " + name);
+	}
 	m_showing = true;
 }
 
