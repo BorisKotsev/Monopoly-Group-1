@@ -17,6 +17,8 @@ public:
 	void destroy();
 	int2 getDices();
 
+	
+
 	vector <Question> m_questions;
 
 private:
@@ -25,6 +27,8 @@ private:
 	Button m_rollButton;
 	Drawable m_dice1Drawable, m_dice2Drawable;
 	Drawable m_playerOnTurnDrawable;
+	Drawable m_p[4];
+
 	
 	
 	int m_dice1, m_dice2;
@@ -34,6 +38,10 @@ private:
 	int numberOfPlayers;
 	int playerOnTurn = 1;
 	int doubleAmount = -1;
+
+	void updateUI();
+	void drawUI();
+	void initUI();
 	
 	int numQuestions = 20; //TEST
 
@@ -43,5 +51,7 @@ private:
 	TextField m_playerOnTurnField;
 	Popup m_popup;
 	
+	TextField m_igrachiUI[4];
+	void initplayersUI();
 
 };

@@ -38,6 +38,8 @@ void Board::init()
 	m_background = loadTexture(GAME_FOLDER + backgorundImg);
 	numberOfPlayers = world.m_stateManager.m_menu->m_nump;
 	loadQuestions();
+	initplayersUI();
+	initUI();
 
 	m_testField.init("enterProduct.txt");
 	m_playerOnTurnField.init("PlayerOnTurn.txt");
@@ -52,6 +54,8 @@ void Board::update()
 	m_testField.update();
 	m_playerOnTurnField.update();
 	m_popup.update();
+	updateUI();
+	
 }
 
 void Board::draw()
@@ -59,32 +63,13 @@ void Board::draw()
 	drawObject(m_background);
 	drawObject(m_dice1Drawable);
 	drawObject(m_dice2Drawable);
+	drawUI();
+
 	m_popup.draw();
 	m_rollButton.draw();
 	//m_testField.draw();
 	m_playerOnTurnField.draw();
 	
-	/*if (questionIndexTEST >= m_questions.size())
-	{
-		questionIndexTEST = 0;
-	}
-
-	m_questions[questionIndexTEST].run();
-
-	if (m_questions[questionIndexTEST].m_answer == 1)
-	{
-		cout << m_questions[questionIndexTEST].getMoney() << endl;
-		m_questions[questionIndexTEST].m_answer = -1;
-
-		questionIndexTEST++;
-	}
-	else if (m_questions[questionIndexTEST].m_answer == 0)
-	{
-		cout << m_questions[questionIndexTEST].loseMoney() << endl;
-		m_questions[questionIndexTEST].m_answer = -1;
-
-		questionIndexTEST++;
-	}*/
 }
 
 void Board::destroy()
@@ -101,6 +86,48 @@ int2 Board::getDices()
 	
 
 	return tmp;
+}
+
+void Board::initUI() {
+
+	fstream stream;
+	string tmp, img;
+
+	for (int i = 0; i < numberOfPlayers; i++) {
+
+		stream.open(CONFIG_FOLDER + FIELD_FOLDER + "p" + to_string(i + 1) + ".txt");	
+		stream >> tmp >> m_p[i].rect.x >> m_p[i].rect.y >> m_p[i].rect.w >> m_p[i].rect.h;
+		stream >> tmp >> img;
+		
+		stream.close();
+		m_p[i].texture = loadTexture(FIELD_FOLDER + img);
+
+	}
+
+
+	
+
+}
+
+void Board::updateUI()
+{
+
+	for (int i = 0; i < numberOfPlayers; i++) {
+
+		m_igrachiUI[i].update();
+	}
+
+}
+
+void Board::drawUI()
+{
+
+
+	for (int i = 0; i < numberOfPlayers; i++) {
+
+		m_igrachiUI[i].draw();
+		drawObject(m_p[i]);
+	}
 }
 
 void Board::initDice(string Config)
@@ -139,7 +166,7 @@ void Board::rollDice()
 		}
 		else {
 
-			doubleAmount = 0;
+			doubleAmount = 0; //go to jail
 			if (playerOnTurn > numberOfPlayers) {
 				playerOnTurn = 1;
 			}
@@ -159,6 +186,37 @@ void Board::rollDice()
 		m_playerOnTurnField.setText("Player on turn: " + to_string(playerOnTurn));
 	}
 	
+}
+
+void Board::initplayersUI()
+{
+	string tmp, p1, p2, p3, p4;
+	fstream stream;
+	stream.open(CONFIG_FOLDER+GAME_FOLDER+ "playersUI.txt");
+
+	stream >> tmp >> p1;
+	stream >> tmp >> p2;
+	stream >> tmp >> p3;
+	stream >> tmp >> p4;
+
+	stream.close();
+
+	m_igrachiUI[0].init(p1);
+	m_igrachiUI[1].init(p2);
+	m_igrachiUI[2].init(p3);
+	m_igrachiUI[3].init(p4);
+
+	m_igrachiUI[0].m_needToDrawBackground = true;
+	m_igrachiUI[1].m_needToDrawBackground = true;
+	m_igrachiUI[2].m_needToDrawBackground = true;
+	m_igrachiUI[3].m_needToDrawBackground = true;
+
+	m_igrachiUI[0].setText(to_string(1500));
+	m_igrachiUI[1].setText(to_string(1500));
+	m_igrachiUI[2].setText(to_string(1500));
+	m_igrachiUI[3].setText(to_string(1500));
+
+
 }
 
 void Board::loadQuestions()

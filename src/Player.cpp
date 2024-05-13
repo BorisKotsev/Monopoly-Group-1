@@ -95,6 +95,11 @@ int Player::calculatePollutionTax()
     return polution;
 }
 
+int Player::getmoney()
+{
+    return m_money;
+}
+
 void Player::setTexture(SDL_Texture* texture)
 {
     m_player.texture = texture;

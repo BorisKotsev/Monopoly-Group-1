@@ -22,6 +22,7 @@ public:
 	int calculateProfitTax();
 	int calculateParadiseTax();
 	int calculatePollutionTax();
+	int getmoney();
 
 	void setTexture(SDL_Texture* texture);
 
