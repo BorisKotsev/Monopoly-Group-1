@@ -4,3 +4,4 @@ Text_config: buy.txt
 Top_text_config: buy-top.txt
 yes_button_config: yesButton.txt
 no_button_config: noButton.txt
+ok_button_config: okButton.txt

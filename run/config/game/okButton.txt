@@ -1,0 +1,4 @@
+Texture: Ok.bmp
+Rect: 208 490 100 50
+Max_increase: 10
+Increase_per_frame: 1

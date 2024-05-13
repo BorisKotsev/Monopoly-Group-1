@@ -54,4 +54,5 @@ private:
 	TextField m_igrachiUI[4];
 	void initplayersUI();
 
+
 };
