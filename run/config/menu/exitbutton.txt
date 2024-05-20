@@ -1,0 +1,4 @@
+Texture: exit.bmp
+Rect: 1652 27 190 70
+Max_increase: 30
+Increase_per_frame: 2

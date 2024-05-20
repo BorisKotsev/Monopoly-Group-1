@@ -22,7 +22,7 @@ void Board::init()
 
 	fstream stream;
 
-	string backgorundImg, tmp, diceConfig, popupConf="Popup.txt";
+	string backgorundImg, tmp, diceConfig, popupConf="Popup.txt", bexit;
 
 	stream.open(CONFIG_FOLDER+ GAME_FOLDER + configFile);
 
@@ -30,11 +30,13 @@ void Board::init()
 
 	stream >> tmp >> diceConfig;
 
+	stream >> tmp >> bexit;
 
 	stream.close();
 	
 	initDice(diceConfig);
 	m_popup.init(popupConf);
+	m_exit.init(bexit, MENU_FOLDER);
 	m_background = loadTexture(GAME_FOLDER + backgorundImg);
 	numberOfPlayers = world.m_stateManager.m_menu->m_nump;
 	loadQuestions();
@@ -54,7 +56,14 @@ void Board::update()
 	m_testField.update();
 	m_playerOnTurnField.update();
 	m_popup.update();
+	m_exit.update();
 	updateUI();
+
+	if (m_exit.isClicked()) {
+
+	world.m_stateManager.changeGameState(GAME_STATE::NONE);
+		return;
+	}
 	
 }
 
@@ -69,6 +78,7 @@ void Board::draw()
 	m_rollButton.draw();
 	//m_testField.draw();
 	m_playerOnTurnField.draw();
+	m_exit.draw();
 	
 }
 

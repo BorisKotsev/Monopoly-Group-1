@@ -3,3 +3,4 @@ img: Menu.bmp
 3pbutton: 3player.txt
 4pbutton: 4player.txt
 play: play.txt
+exit: exitbutton.txt

@@ -28,6 +28,8 @@ private:
 	Drawable m_dice1Drawable, m_dice2Drawable;
 	Drawable m_playerOnTurnDrawable;
 	Drawable m_p[4];
+	Button m_exit;
+
 
 	
 	

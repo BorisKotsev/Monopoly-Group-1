@@ -16,7 +16,7 @@ Menu::~Menu()
 
 void Menu::init()
 {
-	string tmp, img, b2, b3, b4, play;
+	string tmp, img, b2, b3, b4, play, bexit;
 
 	fstream stream;
 
@@ -28,6 +28,7 @@ void Menu::init()
 	stream >> tmp >> b3;
 	stream >> tmp >> b4;
 	stream >> tmp >> play;
+	stream >> tmp >> bexit;
 
 	stream.close();
 
@@ -38,6 +39,7 @@ void Menu::init()
 	m_3pbutton.init(b3, MENU_FOLDER);
 	m_4pbutton.init(b4, MENU_FOLDER);
 	m_play.init(play, MENU_FOLDER);
+	m_exit.init(bexit, MENU_FOLDER);
 
 	m_menu = loadTexture(MENU_FOLDER + img);
 
@@ -53,7 +55,8 @@ void Menu::run()
 	m_3pbutton.update();
 	m_4pbutton.update();
 	m_play.update();
-	
+	m_exit.update();
+
 	if (m_drawplay == true) {
 
 		m_play.draw();
@@ -64,9 +67,11 @@ void Menu::run()
 		m_2pbutton.draw();
 		m_3pbutton.draw();
 		m_4pbutton.draw();
+		
 
 	}
-
+	
+	m_exit.draw();
 	
 
 	if (m_2pbutton.isClicked()) {
@@ -92,14 +97,20 @@ void Menu::run()
 		world.m_stateManager.changeGameState(GAME_STATE::GAME);
 		return;
 	}
-	
+
+
 	if (m_play.isClicked()) {
 
 		m_drawplay = false;
 		m_drawb = true;
 
 	}
+	
+	if (m_exit.isClicked()) {
 
+		world.m_stateManager.changeGameState(GAME_STATE::NONE);
+		return;
+	}
 }
 
 void Menu::destroy()
@@ -110,5 +121,6 @@ void Menu::destroy()
 	m_3pbutton.destroy();
 	m_4pbutton.destroy();
 	m_play.destroy();
+	m_exit.destroy();
 
 }
