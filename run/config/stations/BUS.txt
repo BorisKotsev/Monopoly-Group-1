@@ -1,5 +1,2 @@
 Type: BUS
 Station_Rect: 920 20 80 160
-Electrycity: 0 
-Profit: 0
-Pollution: 0 

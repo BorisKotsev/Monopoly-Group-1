@@ -154,6 +154,7 @@ void Board::initDice(string Config)
 	m_dice2 = 6;
 }
 
+
 void Board::rollDice()
 {
 	if (m_rollButton.isClicked()) {

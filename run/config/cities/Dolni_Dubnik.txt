@@ -1,6 +1,4 @@
 Name: Dolni_Dubnik
 Price: 260
 City_Rect: 1000 20 80 160
-Electrycity: 0 
-Profit: 0
-Pollution: 0
+Color: 6

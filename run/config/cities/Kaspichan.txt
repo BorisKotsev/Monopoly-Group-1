@@ -1,6 +1,4 @@
 city_name: Kaspichan
 price: 180
 Rect: 440 260 160 80
-Electricity: 0
-Profit: 0
-Pollution: 0
+Color: 4

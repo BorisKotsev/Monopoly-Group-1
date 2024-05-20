@@ -22,12 +22,15 @@ void City::init(string configFile)
 	stream >> tmp >> m_cityName;
 	stream >> tmp >> m_price;
 	stream >> tmp >> m_cityRect.x >> m_cityRect.y >> m_cityRect.w >> m_cityRect.h;
-	stream >> tmp >> m_electricity;
-	stream >> tmp >> m_profit;
-	stream >> tmp >> m_pollution;
+	stream >> tmp >> m_color;
+
 
 	stream.close();
 
+
+	m_profit = m_price / 10;
+	m_electricity = m_price / 20;
+	m_pollution = m_price / 25;
 
 }
 
