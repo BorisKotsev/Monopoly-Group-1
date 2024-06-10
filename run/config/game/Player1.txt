@@ -1,1 +1,1 @@
-Player_image: tmp.bmp
+Player_image: Player1.bmp

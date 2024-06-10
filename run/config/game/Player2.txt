@@ -1,0 +1,1 @@
+Player_image: Player2.bmp

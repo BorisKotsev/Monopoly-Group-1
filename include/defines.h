@@ -22,6 +22,7 @@ static string WIN_SCREEN_FOLDER = "WinScreen\\";
 static string GAME_FOLDER = "game\\";
 static string FONT_FOLDER = "font\\";
 static string FIELD_FOLDER = "fields\\";
+static vector<string> Tile = { "STile", "City", "Tax", "City", "City", "Station", "City", "Question", "City", "City" };
 
 struct int2
 {
