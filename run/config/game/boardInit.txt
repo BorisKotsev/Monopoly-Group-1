@@ -1,2 +1,3 @@
 BackgoundImg: background.bmp
 DiceConfigFile: dice.txt
+m_exit: exitbutton.txt

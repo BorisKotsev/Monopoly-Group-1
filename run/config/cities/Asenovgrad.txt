@@ -1,6 +1,4 @@
 Name: Asenovgrad
 Price: 340
 City_Rect: 1320 580 160 80
-Electrycity: 0 
-Profit: 0
-Pollution: 0 
+Color: 8

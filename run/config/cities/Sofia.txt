@@ -1,6 +1,4 @@
 Name: Sofia
 Price: 60
 City_Rect: 1240 900 80 160
-Electrycity: 0
-Profit: 0
-Pollution: 0 
+Color: 1

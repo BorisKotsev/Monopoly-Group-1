@@ -1,6 +1,4 @@
 city_name: Devnq
 price: 180
 Rect: 440 420 160 80
-Electricity: 0
-Profit: 0
-Pollution: 0
+Color: 4

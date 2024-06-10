@@ -1,6 +1,4 @@
 Name: Blagoevgrad
 Price: 100
 City_Rect: 840 900 80 160 
-Electrycity: 0 
-Profit: 0
-Pollution: 0 
+Color: 2

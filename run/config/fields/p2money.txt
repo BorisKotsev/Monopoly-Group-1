@@ -1,0 +1,5 @@
+textrect: 1550 211 44
+fontsize: 35
+bgrect: 1550 211 300 44
+color: 1
+img: p2money.bmp

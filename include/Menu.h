@@ -19,8 +19,9 @@ private:
 	 SDL_Texture* m_menu;
 	 Button m_2pbutton;
 	 Button m_3pbutton;
-	 Button m_4pbutton;
+	 Button m_4pbutton;	
 	 Button m_play;
+	 Button m_exit;
 	 bool m_drawb;
 	 bool m_drawplay;
 };

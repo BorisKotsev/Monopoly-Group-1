@@ -22,6 +22,7 @@ private:
 	int m_electricity;
 	int m_profit;
 	int m_pollution;
+	int m_color; //1 - GREEN; 2 - DARK BLUE; 3 - LIGHT BLUE; 4 - PURPLE; 5 - ORANGE; 6 - RED; 7 - LIGHT GREEN; 8 - PINK;
 
 	SDL_Rect m_cityRect;
 

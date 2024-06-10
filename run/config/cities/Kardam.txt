@@ -1,6 +1,4 @@
 city_name: Kardam
 price: 140
 Rect: 440 660 160 80
-Electricity: 0
-Profit: 0
-Pollution: 0
+Color: 3

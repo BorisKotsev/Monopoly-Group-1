@@ -1,0 +1,4 @@
+file: p1money.txt
+file: p2money.txt
+file: p3money.txt
+file: p4money.txt
