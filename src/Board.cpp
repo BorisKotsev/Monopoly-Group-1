@@ -76,6 +76,7 @@ void Board::update()
 	world.m_stateManager.changeGameState(GAME_STATE::NONE);
 		return;
 	}
+	killplayer();
 	
 }
 
@@ -242,7 +243,7 @@ void Board::rollDice()
 		
 		m_testField.setText(to_string(m_dice1 + m_dice2));
 
-		m_playerOnTurnField.setText("Player on turn: " + to_string(playerOnTurn));
+		m_playerOnTurnField.setText("Player on turn: " + to_string(players[playerOnTurn-1].playerTurn));
 		players[playerOnTurn - 1].movement(m_dice1 + m_dice2);
 	}
 	
@@ -291,4 +292,26 @@ void Board::loadQuestions()
 
 		m_questions.push_back(_question);
 	}
+}
+
+void Board::killplayer()
+{
+
+	for (int i = 0; i < numberOfPlayers; i++) {
+
+		if (players[i].getmoney() <= 0) {
+			numberOfPlayers--;
+			players.erase(players.begin() + i);
+		}
+	}
+
+	if (players.size() == 1) {
+
+		m_winner = players[0].playerTurn;
+		world.m_stateManager.changeGameState(GAME_STATE::WIN_SCREEN);
+		return;
+
+	}
+
+
 }

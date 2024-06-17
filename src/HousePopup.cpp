@@ -30,7 +30,11 @@ void housePopup::init(string conf)
 		m_buttons[i].setVisibility(false);
 		m_buttons[i].setText(to_string(i));
 	}
+	btnRect.y = m_buttonArray.y;
+	int spacing = (m_buttonArray.w - m_buttonWH.x * 3) / 4;
 	for (int i=0; i < 3; i++) {
+		btnRect.x = spacing * (i + 1) + m_buttonWH.x * i + m_buttonArray.x;
+		
 		m_secondary[i].init(btnRect, buttonIcreasePerFrame, buttonMaxIncrease, btnBackgroundImg);
 		m_secondary[i].setVisibility(true);
 
@@ -154,11 +158,11 @@ void housePopup::getCities(vector<City> in)
 				}
 				else {
 					coor.x = m_buttonArray.x + topSpacing * (flag - 4) + m_buttonWH.x * (flag - 5);
-					coor.y = m_buttonArray.y + m_buttonArray.w - m_buttonWH.y;
+					coor.y = m_buttonArray.y + m_buttonArray.h - m_buttonWH.y;
 				}
 				m_buttons[i - 1].setXY(coor);
 				m_buttons[i - 1].setVisibility(true);
-				//cout << coor.x<<' '<<coor.y<<'\n';
+				cout << m_buttonArray.y<<' ' << m_buttonArray.h<<' ' << m_buttonWH.y<<" these are the y\n";
 				flag++;
 			}
 		}

@@ -19,7 +19,7 @@ public:
 	void destroy();
 	int2 getDices();
 
-	
+	int m_winner;
 
 	vector <Question> m_questions;
 	
@@ -62,6 +62,7 @@ private:
 	
 	TextField m_igrachiUI[4];
 	void initplayersUI();
+	void killplayer();
 
 
 };

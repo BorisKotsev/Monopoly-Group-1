@@ -22,6 +22,7 @@ void Player::init(string configFile, int playerTurn)
     stream.close();
     m_player.texture = loadTexture(PlayerImgName);
     m_player.rect = { 1394, 967, 40, 40 };
+    m_money = 1500;
 }
 
 void Player::update()
