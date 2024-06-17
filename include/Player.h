@@ -14,7 +14,9 @@ public:
 	Player();
 	~Player();
 
-	void init(string configFile);
+	
+
+	void init(string configFile, int playerTurn);
 	void update();
 	void draw();
 	void destroy();
@@ -25,6 +27,7 @@ public:
 	int sTile = 0;
 	int city = 0;
 	int station = 0;
+	int playerTurn;
 
 	
 
@@ -43,6 +46,7 @@ public:
 	void addStation(Station station);
 
 private:
+	int currentSide;
 	InputManager inpMan;
 	int m_money;
 

@@ -11,8 +11,9 @@ Player::~Player()
 
 }
 
-void Player::init(string configFile)
+void Player::init(string configFile, int playerTurn)
 {
+    this->playerTurn = playerTurn;
     fstream stream;
     string tmp, PlayerImgName;
     stream.open(CONFIG_FOLDER + GAME_FOLDER + configFile);
@@ -70,6 +71,10 @@ void Player::movement(int multiplier)
 
        
        multiplier = multiplier - Tile.size();
+       currentSide += 1;
+       
+
+           
         
     }
     
@@ -77,18 +82,44 @@ void Player::movement(int multiplier)
     tile += multiplier;
     if (tile >= Tile.size()) {
         tile -= Tile.size();
-        if (tile >= 0) {
-            sTile++;
-            if (sTile == 1) {
-                changeX = 0;
-                changeY = -80;
-            }
-            
-        }
+        
+    }
+
+
+
+    if (collRectRect(m_player.rect, { 440, 900, 160, 160 }) || m_player.rect.x <= 440) {
+        m_player.rect.x = 440;
+        changeX = 0;
+        changeY = -90;
+        currentSide = 2;
+        
+
+    }
+    if (collRectRect(m_player.rect, { 440, 20, 160, 160 }) || m_player.rect.y <= 20) {
+        m_player.rect.y = 20;
+        changeX = 90;
+        changeY = 0;
+        currentSide = 3;
+
+    }
+    if (collRectRect(m_player.rect, { 1320, 20, 160, 160 }) || m_player.rect.x >= 1320 && m_player.rect.y >= 20) {
+        m_player.rect.x = 1320;
+        changeX = 0;
+        changeY = 90;
+        currentSide = 4;
+
+    }
+    if (collRectRect(m_player.rect, { 1320, 900, 160, 160 }) || m_player.rect.x >= 1320 && m_player.rect.y >= 900) {
+        m_player.rect.y = 900;
+        changeX = -90;
+        changeY = 0;
+        currentSide = 1;
+
     }
     
  
     std::cout << " Num " << tile << endl;
+    std::cout << "TILE: " << Tile[tile] << endl;
     
     m_player.rect.x += changeX;
     m_player.rect.y += changeY;

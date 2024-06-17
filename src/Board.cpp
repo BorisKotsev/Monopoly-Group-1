@@ -166,7 +166,7 @@ void Board::loadPlayers()
 
 		Player _player;
 
-		_player.init(tmp);
+		_player.init(tmp, i);
 
 		players.push_back(_player);
 	}
