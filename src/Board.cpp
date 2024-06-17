@@ -54,7 +54,10 @@ void Board::init()
 	m_popup.show("test", 200, 1);
 	m_playerOnTurnField.setText("Player on turn: " + to_string(playerOnTurn));
 
-	m_HPopup.init("housePopup.txt");
+	m_HPopup.init(CONFIG_FOLDER + GAME_FOLDER + "housePopup.txt");
+	loadCities();
+	m_HPopup.getCities(m_cities);
+
 }
 
 void Board::update()
@@ -66,6 +69,7 @@ void Board::update()
 	m_popup.update();
 	m_exit.update();
 	updateUI();
+	m_HPopup.update();
 
 	if (m_exit.isClicked()) {
 
@@ -92,6 +96,7 @@ void Board::draw()
 	}
 
 	m_exit.draw();
+	m_HPopup.draw();
 	
 }
 
@@ -166,6 +171,19 @@ void Board::loadPlayers()
 		players.push_back(_player);
 	}
 
+}
+
+void Board::loadCities()
+{
+	fstream stream;
+	string city;
+	stream.open(CONFIG_FOLDER + CITIES_FOLDER + "list.txt");
+	while (!stream.eof()) {
+		stream >> city;
+		City temp;
+		temp.init(city);
+		m_cities.push_back(temp);
+	}
 }
 
 void Board::initDice(string Config)

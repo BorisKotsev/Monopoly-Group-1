@@ -6,6 +6,7 @@
 #include "TextField.h"
 #include "Popup.h"
 #include "Player.h"
+#include "HousePopup.h"
 class Board
 {
 public:
@@ -26,6 +27,7 @@ public:
 
 private:
 	vector <Player> players;
+	vector<City> m_cities;
 	SDL_Texture* m_background;
 	SDL_Texture* m_diceFaces[7];
 	Button m_rollButton;
@@ -34,9 +36,9 @@ private:
 	Drawable m_p[4];
 	Button m_exit;
 
-
+	housePopup m_HPopup;
 	void loadPlayers();
-	
+	void loadCities();
 	
 	int m_dice1, m_dice2;
 	void initDice(string Config);

@@ -106,6 +106,7 @@ void housePopup::update()
 
 void housePopup::destroy()
 {
+	
 }
 
 void housePopup::getCities(vector<City> in)
@@ -127,19 +128,41 @@ void housePopup::getCities(vector<City> in)
 			m_visibleButtonsCounter++;
 		}
 	}
-	int flag = 0;
+	int flag = 1;
 	int2 coor;
-	int spacing = (m_buttonArray.w-m_buttonWH.x * m_visibleButtonsCounter)/(m_visibleButtonsCounter+1);
-	for (int i = 1; i < 9; i++) {
-		if (m_cities[i].size() == 3) {
-			coor.x = m_buttonArray.x + spacing * i + m_buttonWH.x * (i - 1);
-			coor.y = m_buttonArray.y;
-			m_buttons[i - 1].setXY(coor);
-			m_buttons[i - 1].setVisibility(true);
-			//cout << coor.x<<' '<<coor.y<<'\n';
+	if (m_visibleButtonsCounter <= 4) {
+		int spacing = (m_buttonArray.w - m_buttonWH.x * m_visibleButtonsCounter) / (m_visibleButtonsCounter + 1);
+		for (int i = 1; i < 9; i++) {
+			if (m_cities[i].size() == 3) {
+				coor.x = m_buttonArray.x + spacing * flag + m_buttonWH.x * (flag - 1);
+				coor.y = m_buttonArray.y;
+				m_buttons[i - 1].setXY(coor);
+				m_buttons[i - 1].setVisibility(true);
+				//cout << coor.x<<' '<<coor.y<<'\n';
+				flag++;
+			}
 		}
 	}
-
+	else {
+		int topSpacing = (m_buttonArray.w - m_buttonWH.x * 4) / 3;
+		int bottomSpacing = (m_buttonArray.w - m_buttonWH.x * (m_visibleButtonsCounter - 4)) / (m_visibleButtonsCounter + 3);
+		for (int i = 1; i < 9; i++) {
+			if (m_cities[i].size() == 3) {
+				if (flag < 5) {
+					coor.x = m_buttonArray.x + topSpacing * flag + m_buttonWH.x * (flag - 1);
+					coor.y = m_buttonArray.y;
+				}
+				else {
+					coor.x = m_buttonArray.x + topSpacing * (flag - 4) + m_buttonWH.x * (flag - 5);
+					coor.y = m_buttonArray.y + m_buttonArray.w - m_buttonWH.y;
+				}
+				m_buttons[i - 1].setXY(coor);
+				m_buttons[i - 1].setVisibility(true);
+				//cout << coor.x<<' '<<coor.y<<'\n';
+				flag++;
+			}
+		}
+	}
 }
 
 void housePopup::loadColors()

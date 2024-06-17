@@ -58,3 +58,8 @@ string City::getcityName()
 {
 	return m_cityName;
 }
+
+int City::getColor()
+{
+	return m_color;
+}

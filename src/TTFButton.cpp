@@ -82,7 +82,7 @@ void TTFButton::setXY(int2 coor)
 
 
 	m_text.setRect(m_currTextRect);
-	cout << m_text.getRect().x << ' ' << m_text.getRect().y << '\n';
+	//cout << m_text.getRect().x << ' ' << m_text.getRect().y << '\n';
 	
 }
 
