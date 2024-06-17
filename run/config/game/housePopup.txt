@@ -1,0 +1,8 @@
+Background_image: housePopup.bmp
+Rect: 1500 308 410 466
+Button_array_rect: 1500 442 410 216
+Button_width_height: 100 50
+Button_increase_per_frame_and_max_increase: 1 5
+Button_background: housePopupButton.bmp
+Exit_button_config: housePopupExit.txt
+Back_button_config: housePopupBack.txt

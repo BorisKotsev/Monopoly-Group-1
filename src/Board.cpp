@@ -47,6 +47,8 @@ void Board::init()
 	m_playerOnTurnField.init("PlayerOnTurn.txt");
 	m_popup.show("test", 200, 1);
 	m_playerOnTurnField.setText("Player on turn: " + to_string(playerOnTurn));
+
+	m_HPopup.init("housePopup.txt");
 }
 
 void Board::update()

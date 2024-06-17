@@ -12,7 +12,7 @@ public:
 	void update();
 	void draw();
 	void destroy();
-private:
+protected:
 	int m_maxIncrease;
 	int m_increasePerFrameX, m_increasePerFrameY;
 	int m_currIncreaseX, m_currIncreaseY;

@@ -5,6 +5,7 @@
 #include "Button.h"
 #include "TextField.h"
 #include "Popup.h"
+#include "HousePopup.h"
 class Board
 {
 public:
@@ -29,7 +30,7 @@ private:
 	Drawable m_playerOnTurnDrawable;
 	Drawable m_p[4];
 	Button m_exit;
-
+	housePopup m_HPopup;
 
 	
 	

@@ -17,7 +17,7 @@ public:
 
 	bool m_needToDrawBackground;
 
-private:
+protected:
 	Drawable m_text;
 	int m_fontSize;
 	int m_color;

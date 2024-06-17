@@ -22,9 +22,11 @@
     <ClInclude Include="..\include\Board.h" />
     <ClInclude Include="..\include\Button.h" />
     <ClInclude Include="..\include\City.h" />
+    <ClInclude Include="..\include\ConfiglessTTF.h" />
     <ClInclude Include="..\include\defines.h" />
     <ClInclude Include="..\include\Engine.h" />
     <ClInclude Include="..\include\Game.h" />
+    <ClInclude Include="..\include\HousePopup.h" />
     <ClInclude Include="..\include\InputManager.h" />
     <ClInclude Include="..\include\Menu.h" />
     <ClInclude Include="..\include\Player.h" />
@@ -37,6 +39,7 @@
     <ClInclude Include="..\include\Station.h" />
     <ClInclude Include="..\include\TextField.h" />
     <ClInclude Include="..\include\TitleScreen.h" />
+    <ClInclude Include="..\include\TTFButton.h" />
     <ClInclude Include="..\include\WinScreen.h" />
     <ClInclude Include="..\include\World.h" />
     <ClInclude Include="..\include\Writer.h" />
@@ -45,8 +48,10 @@
     <ClCompile Include="..\src\Board.cpp" />
     <ClCompile Include="..\src\Button.cpp" />
     <ClCompile Include="..\src\City.cpp" />
+    <ClCompile Include="..\src\ConfiglessTTF.cpp" />
     <ClCompile Include="..\src\Engine.cpp" />
     <ClCompile Include="..\src\Game.cpp" />
+    <ClCompile Include="..\src\HousePopup.cpp" />
     <ClCompile Include="..\src\InputManager.cpp" />
     <ClCompile Include="..\src\main.cpp" />
     <ClCompile Include="..\src\Menu.cpp" />
@@ -60,6 +65,7 @@
     <ClCompile Include="..\src\Station.cpp" />
     <ClCompile Include="..\src\TextField.cpp" />
     <ClCompile Include="..\src\TitleScreen.cpp" />
+    <ClCompile Include="..\src\TTFButton.cpp" />
     <ClCompile Include="..\src\WinScreen.cpp" />
     <ClCompile Include="..\src\World.cpp" />
     <ClCompile Include="..\src\Writer.cpp" />
