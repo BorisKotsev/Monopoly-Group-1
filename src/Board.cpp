@@ -11,6 +11,7 @@ Board::Board()
 
 }
 
+
 Board::~Board()
 {
 
@@ -18,6 +19,8 @@ Board::~Board()
 
 void Board::init()
 {
+
+	
 	string configFile ="boardInit.txt";
 
 	fstream stream;
@@ -42,6 +45,9 @@ void Board::init()
 	loadQuestions();
 	initplayersUI();
 	initUI();
+	loadPlayers();
+
+
 
 	m_testField.init("enterProduct.txt");
 	m_playerOnTurnField.init("PlayerOnTurn.txt");
@@ -71,6 +77,7 @@ void Board::update()
 
 void Board::draw()
 {
+	
 	drawObject(m_background);
 	drawObject(m_dice1Drawable);
 	drawObject(m_dice2Drawable);
@@ -80,6 +87,10 @@ void Board::draw()
 	m_rollButton.draw();
 	//m_testField.draw();
 	m_playerOnTurnField.draw();
+	for (int player = 0; player < players.size(); player++) {
+		players[player].draw();
+	}
+
 	m_exit.draw();
 	
 }
@@ -142,6 +153,21 @@ void Board::drawUI()
 	}
 }
 
+void Board::loadPlayers()
+{
+	for (int i = 1; i <= numberOfPlayers; i++)
+	{
+		string tmp = "Player" + to_string(i) + ".txt";
+
+		Player _player;
+
+		_player.init(tmp);
+
+		players.push_back(_player);
+	}
+
+}
+
 void Board::initDice(string Config)
 {
 	string tmp, rollButtonConf;
@@ -186,6 +212,8 @@ void Board::rollDice()
 			
 
 		}
+
+
 		m_dice1 = rand() % 6 + 1;
 		m_dice2 = rand() % 6 + 1;
 
@@ -197,6 +225,7 @@ void Board::rollDice()
 		m_testField.setText(to_string(m_dice1 + m_dice2));
 
 		m_playerOnTurnField.setText("Player on turn: " + to_string(playerOnTurn));
+		players[playerOnTurn - 1].movement(m_dice1 + m_dice2);
 	}
 	
 }

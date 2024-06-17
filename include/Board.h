@@ -5,7 +5,7 @@
 #include "Button.h"
 #include "TextField.h"
 #include "Popup.h"
-#include "HousePopup.h"
+#include "Player.h"
 class Board
 {
 public:
@@ -21,8 +21,11 @@ public:
 	
 
 	vector <Question> m_questions;
+	
+
 
 private:
+	vector <Player> players;
 	SDL_Texture* m_background;
 	SDL_Texture* m_diceFaces[7];
 	Button m_rollButton;
@@ -30,8 +33,9 @@ private:
 	Drawable m_playerOnTurnDrawable;
 	Drawable m_p[4];
 	Button m_exit;
-	housePopup m_HPopup;
 
+
+	void loadPlayers();
 	
 	
 	int m_dice1, m_dice2;

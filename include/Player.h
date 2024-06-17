@@ -3,6 +3,10 @@
 #include "Engine.h"
 #include "City.h"
 #include "Station.h"
+#include "InputManager.h"
+#include <cstdlib>
+#include <algorithm>
+
 
 class Player
 {
@@ -17,6 +21,15 @@ public:
 
 	void pay(int amount);
 	void earn(int amount);
+	int tile = 0;
+	int sTile = 0;
+	int city = 0;
+	int station = 0;
+
+	
+
+	void movement(int multiplier);
+
 
 	int calculateElectrycityTax();
 	int calculateProfitTax();
@@ -30,6 +43,7 @@ public:
 	void addStation(Station station);
 
 private:
+	InputManager inpMan;
 	int m_money;
 
 	Drawable m_player;
